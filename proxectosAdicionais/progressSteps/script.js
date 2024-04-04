@@ -1,16 +1,18 @@
 let progressBar = document.getElementById("progress");
 let circleElements = document.querySelectorAll(".circle");
+let numberOfCircles = circleElements.length - 1;
 let prevButton = document.getElementById("prev");
 let nextButton = document.getElementById("next");
 let counter = 0;
-let progressBarWitdht = 0;
+let progressBarWidth = 0;
+let progressBarChange = 100 / numberOfCircles;
 
 nextButton.addEventListener("click", () => {
   counter++;
-  progressBarWitdht += 33;
-  progressBar.style.width = `${progressBarWitdht}%`;
+  progressBarWidth += progressBarChange;
+  progressBar.style.width = `${progressBarWidth}%`;
   circleElements[counter].classList.add("active");
-  if (counter === 3) {
+  if (counter === numberOfCircles) {
     nextButton.setAttribute("disabled", "");
   }
   if (counter !== 0) {
@@ -21,12 +23,12 @@ nextButton.addEventListener("click", () => {
 prevButton.addEventListener("click", () => {
   circleElements[counter].classList.remove("active");
   counter--;
-  progressBarWitdht -= 33;
-  progressBar.style.width = `${progressBarWitdht}%`;
+  progressBarWidth -= progressBarChange;
+  progressBar.style.width = `${progressBarWidth}%`;
   if (counter === 0) {
     prevButton.setAttribute("disabled", "");
   }
-  if (counter !== 3) {
+  if (counter !== numberOfCircles) {
     nextButton.removeAttribute("disabled");
   }
 });
