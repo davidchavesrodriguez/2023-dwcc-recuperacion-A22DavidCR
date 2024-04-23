@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom3</title>
+  </head>
+  <body>
+    <div>Users:</div>
+    <ul>
+      <li>John</li>
+      <li>Pete</li>
+    </ul>
+  </body>
+  <script>
+    /* Utilizando as diferentes propiedades para recorrer o DOM, 
+    indica, polo menos, unha forma de acceder aos seguintes nodos: */
+    // ● o nodo <div>
+    let divElement = document.body.firstElementChild;
+    console.log(divElement);
+
+    // ● o nodo <ul>
+    let ul = divElement.nextElementSibling;
+    console.log(ul);
+
+    // ● o segundo <li>
+    let secondLi = ul.lastElementChild;
+    console.log(secondLi);
+  </script>
+</html>
