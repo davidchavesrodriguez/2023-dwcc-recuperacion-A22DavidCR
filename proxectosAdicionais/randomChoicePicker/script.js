@@ -7,16 +7,17 @@ textArea.addEventListener("input", () => {
   let textAreaValue = textArea.value;
   let numbers = textAreaValue.split(", ");
   console.log(numbers);
-
+  tagArea.innerHTML= "";
+  
   numbers.forEach((number) => {
-    console.log(isNaN(number / 1));
-
-    if (!isNaN(number / 1 && number !== " ")) {
+    // Comprobar que se introduce un número
+    if (!isNaN(number)) {
       tag = document.createElement("span");
-      tag.classList.add("tag");
+      number.replaceAll(/\s/g, "x");
       tag.innerText = number.replaceAll(",", "");
+      tag.classList.add("tag");
+      tagArea.appendChild(tag);
     }
-    tagArea.appendChild(tag);
   });
 });
 
