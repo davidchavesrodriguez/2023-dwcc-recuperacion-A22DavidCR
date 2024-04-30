@@ -1,3 +1,7 @@
+/* Crea unha función denominada isPalidrome que reciba 
+como parámetro un string e devolva true se é un palíndromo 
+e false en caso contrario. */
+
 function isPalindrome(string) {
   let reversedArray = string.split("").reverse();
   let reversedString = reversedArray.join("").toLowerCase().replaceAll(" ", "");
