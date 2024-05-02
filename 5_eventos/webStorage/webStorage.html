@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Storage</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+      }
+      input[type="radio"],
+      input[type="checkbox"] {
+        margin-right: 5px;
+      }
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Formulario de ejemplo</h2>
+      <form action="#">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+        <label>Género:</label>
+        <input
+          type="radio"
+          id="genero-masculino"
+          name="genero"
+          value="masculino"
+          checked
+        />
+        <label for="genero-masculino">Masculino</label>
+        <input
+          type="radio"
+          id="genero-femenino"
+          name="genero"
+          value="femenino"
+        />
+        <label for="genero-femenino">Femenino</label>
+
+        <label>Preferencias:</label>
+        <input
+          type="checkbox"
+          id="preferencia-1"
+          name="preferencia-1"
+          value="opcion1"
+        />
+        <label for="preferencia-1">Opción 1</label>
+        <input
+          type="checkbox"
+          id="preferencia-2"
+          name="preferencia-2"
+          value="opcion2"
+        />
+        <label for="preferencia-2">Opción 2</label>
+
+        <input id="submit" type="submit" value="Enviar" />
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
