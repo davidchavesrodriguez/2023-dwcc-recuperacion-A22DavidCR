@@ -112,3 +112,12 @@ button:disabled {
 .log--heal {
   color: green;
 }
+
+/* custom */
+.hidden {
+  display: none;
+}
+
+.shown {
+  display: block;
+}

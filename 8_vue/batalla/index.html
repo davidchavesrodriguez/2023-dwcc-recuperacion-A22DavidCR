@@ -21,26 +21,34 @@
       <section id="monster" class="container" @click="mostrarVidaMonstro">
         <h2>Monstro</h2>
         <div class="healthbar">
-          <div class="healthbar__value"></div>
+          <div
+            class="healthbar__value"
+            :style="{width: vidaMonstro + '%'}"
+          ></div>
         </div>
       </section>
       <section id="player" class="container" @click="mostrarVidaXogador">
         <h2>Vostede</h2>
         <div class="healthbar">
-          <div class="healthbar__value"></div>
+          <div
+            class="healthbar__value"
+            :style="{width: vidaXogador + '%'}"
+          ></div>
         </div>
       </section>
-      <section class="container">
-        <h2>Fin partida!</h2>
-        <h3>Perdiches!</h3>
-        <h3>Ganaches</h3>
-        <h3>Empate</h3>
-        <button>Novo xogo</button>
+      <section class="container" :class="{hidden: isPlaying}">
+        <h2 :class="{hidden: isPlaying}">Fin partida!</h2>
+        <h3 class="hidden" :class="{shown: derrota}">Perdiches!</h3>
+        <h3 class="hidden" :class="{shown: victoria}">Ganaches</h3>
+        <h3 class="hidden" :class="{shown: empate}">Empate</h3>
+        <button :class="{hidden: isPlaying}" @click="xogoNovo">
+          Novo xogo
+        </button>
       </section>
-      <section id="controls">
+      <section id="controls" :class="{hidden: isPlaying}">
         <button @click="ataque">ATAQUE</button>
-        <button>ATAQUE ESPECIAL</button>
-        <button>CURACIÓN</button>
+        <button @click="especial" :disabled="disabled">ATAQUE ESPECIAL</button>
+        <button @click="curacion">CURACIÓN</button>
         <button>RENDERSE</button>
       </section>
       <section id="log" class="container">
