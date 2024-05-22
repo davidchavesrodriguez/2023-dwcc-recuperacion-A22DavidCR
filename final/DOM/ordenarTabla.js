@@ -29,5 +29,3 @@ thNome.addEventListener("click", ()=>{
         tbody.appendChild(row);
     });
 })
-
-
