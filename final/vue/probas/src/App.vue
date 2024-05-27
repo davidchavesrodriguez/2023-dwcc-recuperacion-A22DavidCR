@@ -1,37 +1,20 @@
 <script>
-export default {
-  data() {
-    return {
-      message: 'Ola mundo!',
-      count: 0,
-    };
-  },
-  methods: {
-    handleClick() {
-      this.count++;
-      console.log(this.count);
+import Home from './components/Home.vue';
 
-    }
+export default {
+  components: {
+    Home,
   },
 };
 </script>
 
 <template>
-  <h1>{{ message }}</h1>
-  <button @click="handleClick">You clicked me {{ count }} times.</button>
-  <FoodItem />
-  <TextoMayusculas />
-
-  <Persona />
-
+  <div>
+    Hola
+    <Home></Home>
+  </div>
 </template>
 
-<style>
-#app>div {
-  border: dashed black 1px;
-  display: inline-block;
-  margin: 10px;
-  padding: 10px;
-  background-color: lightgreen;
-}
+<style scoped>
+/* Opcional: Estilos para tu componente */
 </style>
