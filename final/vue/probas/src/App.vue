@@ -1,19 +1,32 @@
-<script>
-import Home from './components/Home.vue';
+<template>
+  <div>
+    <component :is='currentTab' :tasks="taskArray" @taskAdded="addTask"></component>
+  </div>
+  <button @click="changeCurrent">Cambia!</button>
+</template>
 
+<script>
 export default {
-  components: {
-    Home,
+  data(){
+    return{
+      currentTab: "Home",
+      taskArray: []
+    }
+  },
+  methods: {
+    changeCurrent(){
+      if (this.currentTab == "AddTask") {
+        this.currentTab = "TaskList"
+      } else {
+        this.currentTab= "AddTask"
+      }
+    },
+    addTask(task){
+      this.taskArray.push(task);
+    }
   },
 };
 </script>
-
-<template>
-  <div>
-    Hola
-    <Home></Home>
-  </div>
-</template>
 
 <style scoped>
 /* Opcional: Estilos para tu componente */

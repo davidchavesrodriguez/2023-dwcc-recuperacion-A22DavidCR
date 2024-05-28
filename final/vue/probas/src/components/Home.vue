@@ -1,5 +1,4 @@
-<script>
-</script>
+
 <template>
-  <h1>Hola!</h1>
+Home
 </template>
