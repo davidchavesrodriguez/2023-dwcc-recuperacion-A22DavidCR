@@ -2,32 +2,30 @@
   <div>
     <component :is='currentTab' :tasks="taskArray" @taskAdded="addTask"></component>
   </div>
-  <button @click="changeCurrent">Cambia!</button>
+  <button @click="changeCurrent">Change!</button>
 </template>
 
 <script>
 export default {
-  data(){
-    return{
-      currentTab: "Home",
+  data() {
+    return {
+      currentTab: "DarthMaul",
       taskArray: []
     }
   },
   methods: {
-    changeCurrent(){
+    changeCurrent() {
       if (this.currentTab == "AddTask") {
         this.currentTab = "TaskList"
       } else {
-        this.currentTab= "AddTask"
+        this.currentTab = "AddTask"
       }
     },
-    addTask(task){
+    addTask(task) {
       this.taskArray.push(task);
     }
   },
 };
 </script>
 
-<style scoped>
-/* Opcional: Estilos para tu componente */
-</style>
+<style scoped></style>

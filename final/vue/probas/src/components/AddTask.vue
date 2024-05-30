@@ -2,13 +2,13 @@
 export default {
   data() {
     return {
-      taskValue:"",
+      taskValue: "",
     };
   },
   methods: {
     addTask() {
-        this.$emit("taskAdded", this.taskValue)
-        this.taskValue= "";
+      this.$emit("taskAdded", this.taskValue);
+      this.taskValue = "";
     },
   },
 };
